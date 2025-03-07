@@ -33,7 +33,7 @@
 					</outflow>
 			</stock>
 			<aux name="#Companies">
-				<units></units>
+				<units>Company</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF("#Companies","Govt._Investments",Infrastructure_Investment_Fraction,Skilled_Youth)					</eqn>
 					<eqn>					</eqn>
@@ -51,25 +51,25 @@
 	Children*(1-Skill_Fraction)					</eqn>
 			</aux>
 			<aux name="Avg_Company_Investments">
-				<units></units>
+				<units>Rupees/(Year*Company)</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Avg_Company_Investments)					</eqn>
 					<eqn>					</eqn>
 			</aux>
 			<aux name="Avg_Income_of_Skilled_Youth">
-				<units></units>
+				<units>Rupees/Year</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Avg_Income_of_Skilled_Youth)					</eqn>
 					<eqn>					</eqn>
 			</aux>
 			<aux name="Avg_Income_of_Unskilled_Youth">
-				<units></units>
+				<units>Rupees/Year</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Avg_Income_of_Unskilled_Youth)					</eqn>
 					<eqn>					</eqn>
 			</aux>
 			<aux name="Avg_Spending_on_Elderly_Care">
-				<units></units>
+				<units>Rupees/(People*Year)</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Avg_Spending_on_Elderly_Care)					</eqn>
 					<eqn>					</eqn>
@@ -81,7 +81,7 @@
 	Fertility_Rate*Total_Youth_Population					</eqn>
 			</aux>
 			<aux name="Children">
-				<units></units>
+				<units>People</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Children,Adulting_Rate_1,Adulting_Rate_2,Birth_Rate)					</eqn>
 					<eqn> INTEG (
@@ -98,7 +98,7 @@
 				<units>People/Year</units>
 				<doc></doc>
 					<eqn>
-	Death_Fraction*Senior_Citizens					</eqn>
+	Death_Factor*Senior_Citizens					</eqn>
 			</aux>
 			<aux name="Expenditure">
 				<units>Rupees/Year</units>
@@ -118,26 +118,26 @@
 					<eqn>
 	Total_Company_Investments + Total_Income_Tax					</eqn>
 			</aux>
-			<aux name="Old_Fraction">
-				<units></units>
+			<aux name="Old_Factor">
+				<units>1/Year</units>
 				<doc></doc>
-					<eqn>A FUNCTION OF(Old_Fraction)					</eqn>
+					<eqn>A FUNCTION OF(Old_Factor)					</eqn>
 					<eqn>					</eqn>
 			</aux>
 			<aux name="Old_Rate_1">
 				<units>People/Year</units>
 				<doc></doc>
 					<eqn>
-	Old_Fraction*Skilled_Youth					</eqn>
+	Old_Factor*Skilled_Youth					</eqn>
 			</aux>
 			<aux name="Old_Rate_2">
 				<units>People/Year</units>
 				<doc></doc>
 					<eqn>
-	Old_Fraction*Unskilled_Youth					</eqn>
+	Old_Factor*Unskilled_Youth					</eqn>
 			</aux>
 			<aux name="Senior_Citizens">
-				<units></units>
+				<units>People</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Senior_Citizens,Death_Rate,Old_Rate_1,Old_Rate_2)					</eqn>
 					<eqn> INTEG (
@@ -145,13 +145,13 @@
 		)					</eqn>
 			</aux>
 			<aux name="Skill_Fraction">
-				<units></units>
+				<units>1/Year</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Skill_Fraction,Education_Investment_Fraction,"Govt._Investments")					</eqn>
 					<eqn>					</eqn>
 			</aux>
 			<aux name="Skilled_Youth">
-				<units></units>
+				<units>People</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Skilled_Youth,Adulting_Rate_1,Old_Rate_1,Upskill)					</eqn>
 					<eqn> INTEG (
@@ -159,7 +159,7 @@
 		)					</eqn>
 			</aux>
 			<aux name="Some_Fraction">
-				<units></units>
+				<units>1/Year</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Some_Fraction)					</eqn>
 					<eqn>					</eqn>
@@ -189,7 +189,7 @@
 	Skilled_Youth + Unskilled_Youth					</eqn>
 			</aux>
 			<aux name="Unskilled_Youth">
-				<units></units>
+				<units>People</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Unskilled_Youth,Adulting_Rate_2,Old_Rate_2,Upskill)					</eqn>
 					<eqn> INTEG (
@@ -197,12 +197,12 @@
 		)					</eqn>
 			</aux>
 			<aux name="Upskill">
-				<units></units>
+				<units>People/Year</units>
 				<doc></doc>
 					<eqn>A FUNCTION OF(Upskill,Education_Investment_Fraction,"Govt._Investments",Unskilled_Youth)					</eqn>
 					<eqn>					</eqn>
 			</aux>
-			<aux name="Death_Fraction">
+			<aux name="Death_Factor">
 				<units>1/Year</units>
 				<doc></doc>
 					<eqn>
