@@ -1,0 +1,201 @@
+{UTF-8}
+Youth Population  = A FUNCTION OF( Fertility Rate,Infant Mortality Rate)
+	~	
+	~		|
+
+Skill Development Programmes  = A FUNCTION OF( Education Investment)
+	~	
+	~		|
+
+Health Investment  = A FUNCTION OF( GDP)
+	~	
+	~		|
+
+Infant Mortality Rate  = A FUNCTION OF( Health Investment)
+	~	
+	~		|
+
+Public Health  = A FUNCTION OF( Health Investment)
+	~	
+	~		|
+
+Fertility Rate  = A FUNCTION OF( )
+	~	
+	~		|
+
+Skill Level of Youth  = A FUNCTION OF( Skill Development Programmes)
+	~	
+	~		|
+
+Business Attraction  = A FUNCTION OF( Employment Rights,Skill Level of Youth)
+	~	
+	~		|
+
+Consumption  = A FUNCTION OF( Job Security)
+	~	
+	~		|
+
+Cost of Living  = A FUNCTION OF( )
+	~	
+	~		|
+
+Education Investment  = A FUNCTION OF( GDP)
+	~	
+	~		|
+
+Employment Rights  = A FUNCTION OF( )
+	~	
+	~		|
+
+GDP  = A FUNCTION OF( Consumption,Productivity)
+	~	
+	~		|
+
+Job Opportunities  = A FUNCTION OF( Business Attraction)
+	~	
+	~		|
+
+Job Security  = A FUNCTION OF( Employment Rights)
+	~	
+	~		|
+
+Labour Participation  = A FUNCTION OF( Job Opportunities,Youth Population)
+	~	
+	~		|
+
+Poverty  = A FUNCTION OF( Cost of Living,Salary,Worker Exploitation)
+	~	
+	~		|
+
+Productivity  = A FUNCTION OF( Labour Participation,Public Health)
+	~	
+	~		|
+
+Salary  = A FUNCTION OF( Employment Rights)
+	~	
+	~		|
+
+Unemployment  = A FUNCTION OF( Job Opportunities,Poverty,Skill Level of Youth)
+	~	
+	~		|
+
+Worker Exploitation  = A FUNCTION OF( Employment Rights)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,75,2
+10,1,Youth Population,1080,532,51,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,2,Unemployment,1023,204,61,16,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,3,GDP,436,467,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,4,Job Opportunities,871,269,69,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,5,4,2,1,0,45,0,0,192,0,-1--1--1,,1|(962,245)|
+10,6,Labour Participation,775,393,59,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,7,1,6,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,8,4,6,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,9,Skill Level of Youth,884,117,56,21,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,10,Poverty,1117,303,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,11,9,2,1,0,45,0,0,192,0,-1--1--1,,1|(975,145)|
+1,12,10,2,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,13,Business Attraction,685,213,47,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,14,9,13,1,0,43,0,0,192,0,-1--1--1,,1|(782,130)|
+1,15,13,4,1,0,43,0,0,192,0,-1--1--1,,1|(757,290)|
+10,16,Skill Development Programmes,694,72,83,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,17,Education Investment,468,194,53,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,18,16,9,1,0,43,0,0,192,0,-1--1--1,,1|(818,54)|
+10,19,Public Health,635,459,62,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,20,3,17,1,0,43,0,0,192,0,-1--1--1,,1|(427,318)|
+10,21,Cost of Living,1199,210,61,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,22,Salary,981,353,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,23,22,10,1,0,45,0,0,192,0,-1--1--1,,1|(1031,312)|
+1,24,21,10,0,0,43,0,0,64,0,-1--1--1,,1|(0,0)|
+10,25,Employment Rights,885,502,65,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,26,25,22,1,0,43,0,0,192,0,-1--1--1,,1|(930,405)|
+1,27,25,13,1,0,45,0,0,192,0,-1--1--1,,1|(662,397)|
+10,28,Job Security,735,588,55,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,29,25,28,1,0,43,0,0,192,0,-1--1--1,,1|(808,558)|
+10,30,Worker Exploitation,1078,419,56,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,31,25,30,1,0,45,0,0,192,0,-1--1--1,,1|(983,488)|
+1,32,30,10,1,0,43,0,0,192,0,-1--1--1,,1|(1110,364)|
+10,33,Consumption,559,551,54,21,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,34,33,3,1,0,43,0,0,192,0,-1--1--1,,1|(486,525)|
+1,35,28,33,1,0,43,0,0,192,0,-1--1--1,,1|(644,592)|
+10,36,Productivity,586,341,55,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,37,36,3,1,0,43,0,0,192,0,-1--1--1,,1|(506,375)|
+1,38,6,36,1,0,43,0,0,192,0,-1--1--1,,1|(681,324)|
+1,39,19,36,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,40,Fertility Rate,1146,648,59,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,40,1,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,42,Infant Mortality Rate,833,647,72,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,43,Health Investment,513,651,53,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,44,3,43,1,0,43,0,0,192,0,-1--1--1,,1|(456,560)|
+1,45,43,42,1,0,45,0,0,192,0,-1--1--1,,1|(667,668)|
+1,46,42,1,1,0,45,0,0,192,0,-1--1--1,,1|(976,600)|
+1,47,43,19,1,0,0,0,0,192,0,-1--1--1,,1|(621,567)|
+1,48,17,16,1,0,43,0,0,192,0,-1--1--1,,1|(538,111)|
+12,49,0,582,215,26,26,4,7,0,0,-1,1,0,0,0,0,0,0,0,0
+R1
+12,50,0,540,463,26,26,5,7,0,0,-1,1,0,0,0,0,0,0,0,0
+R2
+12,51,0,929,564,26,26,5,7,0,0,-1,1,0,0,0,0,0,0,0,0
+R3
+///---\\\
+:L<%^E!@
+5:Education Investment
+19:75,0
+24:0
+25:0
+26:0
+23:0
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Vensim Sans|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
