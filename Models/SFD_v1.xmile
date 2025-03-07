@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0">
+	<header>
+		<product version="1.0" lang="en">Vensim</product>
+		<vendor>Ventana Systems, Inc.</vendor>
+		<created>
+		</created>
+		<modified>
+		</modified>
+		<name>
+		</name>
+		<caption>
+		</caption>
+	</header>
+	<sim_specs method="RK4" time_units="Year">
+		<start>0</start>
+		<stop>100</stop>
+		<dt>1</dt>
+	</sim_specs>
+	<model>
+		<variables>
+			<stock name="Government_Revenue">
+				<units>Rupees</units>
+				<doc></doc>
+					<eqn>
+					2.716e+14
+					</eqn>
+					<inflow>
+					Income
+					</inflow>
+					<outflow>
+					Expenditure
+					</outflow>
+			</stock>
+			<aux name="#Companies">
+				<units>Company</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF("#Companies","Govt._Investments",Infrastructure_Investment_Fraction,Skilled_Youth)					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Adulting_Rate_1">
+				<units>People/Year</units>
+				<doc></doc>
+					<eqn>
+	Children*Skill_Fraction					</eqn>
+			</aux>
+			<aux name="Adulting_Rate_2">
+				<units>People/Year</units>
+				<doc></doc>
+					<eqn>
+	Children*(1-Skill_Fraction)					</eqn>
+			</aux>
+			<aux name="Avg_Company_Investments">
+				<units>Rupees/(Year*Company)</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Avg_Company_Investments)					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Avg_Income_of_Skilled_Youth">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Avg_Income_of_Skilled_Youth)					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Avg_Income_of_Unskilled_Youth">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Avg_Income_of_Unskilled_Youth)					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Avg_Spending_on_Elderly_Care">
+				<units>Rupees/(People*Year)</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Avg_Spending_on_Elderly_Care)					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Birth_Rate">
+				<units>People/Year</units>
+				<doc></doc>
+					<eqn>
+	Fertility_Rate*Total_Youth_Population					</eqn>
+			</aux>
+			<aux name="Children">
+				<units>People</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Children,Adulting_Rate_1,Adulting_Rate_2,Birth_Rate)					</eqn>
+					<eqn> INTEG (
+	Birth_Rate-Adulting_Rate_1-Adulting_Rate_2,
+		)					</eqn>
+			</aux>
+			<aux name="Corruption">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>
+	Government_Revenue*(1-Some_Fraction)					</eqn>
+			</aux>
+			<aux name="Death_Rate">
+				<units>People/Year</units>
+				<doc></doc>
+					<eqn>
+	Death_Factor*Senior_Citizens					</eqn>
+			</aux>
+			<aux name="Expenditure">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>
+	Corruption + "Govt._Investments" + Total_Spending_on_Elderly_Care					</eqn>
+			</aux>
+			<aux name="Govt._Investments">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>
+	Government_Revenue*Some_Fraction					</eqn>
+			</aux>
+			<aux name="Income">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>
+	Total_Company_Investments + Total_Income_Tax					</eqn>
+			</aux>
+			<aux name="Old_Factor">
+				<units>1/Year</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Old_Factor)					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Old_Rate_1">
+				<units>People/Year</units>
+				<doc></doc>
+					<eqn>
+	Old_Factor*Skilled_Youth					</eqn>
+			</aux>
+			<aux name="Old_Rate_2">
+				<units>People/Year</units>
+				<doc></doc>
+					<eqn>
+	Old_Factor*Unskilled_Youth					</eqn>
+			</aux>
+			<aux name="Senior_Citizens">
+				<units>People</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Senior_Citizens,Death_Rate,Old_Rate_1,Old_Rate_2)					</eqn>
+					<eqn> INTEG (
+	Old_Rate_1+Old_Rate_2-Death_Rate,
+		)					</eqn>
+			</aux>
+			<aux name="Skill_Fraction">
+				<units>1/Year</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Skill_Fraction,Education_Investment_Fraction,"Govt._Investments")					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Skilled_Youth">
+				<units>People</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Skilled_Youth,Adulting_Rate_1,Old_Rate_1,Upskill)					</eqn>
+					<eqn> INTEG (
+	Adulting_Rate_1+Upskill-Old_Rate_1,
+		)					</eqn>
+			</aux>
+			<aux name="Some_Fraction">
+				<units>1/Year</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Some_Fraction)					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Total_Company_Investments">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>
+	"#Companies"*Avg_Company_Investments					</eqn>
+			</aux>
+			<aux name="Total_Income_Tax">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>
+	Avg_Income_of_Skilled_Youth*Skilled_Youth*Tax_Rate_for_Skilled_Youth + Avg_Income_of_Unskilled_Youth*Unskilled_Youth*Tax_Rate_for_Unskilled_Youth					</eqn>
+			</aux>
+			<aux name="Total_Spending_on_Elderly_Care">
+				<units>Rupees/Year</units>
+				<doc></doc>
+					<eqn>
+	Avg_Spending_on_Elderly_Care*Senior_Citizens					</eqn>
+			</aux>
+			<aux name="Total_Youth_Population">
+				<units>People</units>
+				<doc></doc>
+					<eqn>
+	Skilled_Youth + Unskilled_Youth					</eqn>
+			</aux>
+			<aux name="Unskilled_Youth">
+				<units>People</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Unskilled_Youth,Adulting_Rate_2,Old_Rate_2,Upskill)					</eqn>
+					<eqn> INTEG (
+	Adulting_Rate_2-Old_Rate_2-Upskill,
+		)					</eqn>
+			</aux>
+			<aux name="Upskill">
+				<units>People/Year</units>
+				<doc></doc>
+					<eqn>A FUNCTION OF(Upskill,Education_Investment_Fraction,"Govt._Investments",Unskilled_Youth)					</eqn>
+					<eqn>					</eqn>
+			</aux>
+			<aux name="Death_Factor">
+				<units>1/Year</units>
+				<doc></doc>
+					<eqn>
+	0.1					</eqn>
+			</aux>
+			<aux name="Education_Investment_Fraction">
+				<units></units>
+				<doc></doc>
+					<eqn>
+	0.3					</eqn>
+			</aux>
+			<aux name="Fertility_Rate">
+				<units>1/Year</units>
+				<doc></doc>
+					<eqn>
+	2					</eqn>
+			</aux>
+			<aux name="Infrastructure_Investment_Fraction">
+				<units></units>
+				<doc></doc>
+					<eqn>
+	0.3					</eqn>
+			</aux>
+			<aux name="Tax_Rate_for_Skilled_Youth">
+				<units>1/People</units>
+				<doc></doc>
+					<eqn>
+	0.2					</eqn>
+			</aux>
+			<aux name="Tax_Rate_for_Unskilled_Youth">
+				<units>1/People</units>
+				<doc></doc>
+					<eqn>
+	0.05					</eqn>
+			</aux>
+		</variables>
+	</model>
+</xmile>
