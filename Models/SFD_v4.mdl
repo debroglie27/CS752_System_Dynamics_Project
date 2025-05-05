@@ -15,7 +15,7 @@ Income Tax Paying People=
 	~		|
 
 "Unskilled Workers (23 - 59)"= INTEG (
-	No Skilling Rate-Unskilled Workers Aging Rate-Upskill Rate-Upskill Rate,
+	No Skilling Rate-Unskilled Workers Aging Rate-Upskill Rate,
 		5.28992e+08)
 	~	People
 	~		|
@@ -897,11 +897,10 @@ R3
 1,62,61,13,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
 ///---\\\
 :L<%^E!@
-1:CP=1.vdfx
 4:Time
-5:Companies
+5:"Unskilled Workers (23 - 59)"
 9:CP=1
-19:121,4
+19:89,0
 24:0
 25:140
 26:140
